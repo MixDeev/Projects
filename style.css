@@ -1,205 +1,200 @@
 *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
 }
 
-
-body {
-    background-image: url(images/bg-pattern-top-desktop.svg), url(images/bg-pattern-bottom-desktop.svg);
-    background-repeat: no-repeat;
-    background-position: top left, bottom right;
-    background-color: hsl(0, 0%, 100%);
-    min-height: 100vh; 
-    display: flex;
+body{
+    background-color: hsl(210, 46%, 95%);
+    width: 80%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    font-size: 1rem; 
-    font-family: "League Spartan", sans-serif;
+    margin: 100px auto;
+    font: 13px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: 13px;
 }
 
 .container{
-    width:80%; 
-    height:100%
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; 
+}
+
+.face-icon{
+    float: left;
+    height: 30px;
+    border-radius: 50%;
+}
+
+h4{
+    margin-left: 40px;
+    margin-bottom: 20px;
+    color: white
+}
+
+.third-card h4 , .fifth-card h4{
+    color: hsl(217, 19%, 35%);
+}
+
+span{
+    color: hsl(0, 0%, 81%);
+}
+
+.first-card{
+    grid-column: span 2;
+    padding: 30px;
+    background-color: hsl(263, 55%, 52%);
+    border-radius: 3%;
+    position: relative;  
+}
+
+.first-card .quote{
+    position: absolute;
+    top: 1px;
+    right: 50px;
+    opacity: 0.3;
+}
+
+.second-card{
+    padding: 30px;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 3%;
+}
+
+.third-card{
+    grid-area: 2/1;
+    padding: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 3%;
+}
+
+.fourth-card{
+    grid-area: 2/2;
+    grid-column: span 2;
+    padding: 30px;
+    background-color:hsl(219, 29%, 14%);
+    border-radius: 3%;
+}
+
+.fifth-card{
+    grid-area: 1/4;
+    grid-row: span 2;
+    padding: 30px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 3%;
+}
+
+.first-p{
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.third-card .first-p , .fifth-card .first-p{
+    color: hsl(217, 19%, 35%);
+}
+
+.second-p{
+    color: hsl(0, 0%, 81%);
+    line-height: 1.2rem;
+}
+
+.third-card .second-p, .fifth-card .second-p{
+    color: hsl(217, 19%, 35%);
 }
 
 .attribution {
     text-align: center; 
     margin-top: 25px;
     padding: 20px; 
-
+    grid-column: 1 / -1; 
 }
 
-.section{
-    display: grid;
-    grid-template-columns:  1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-}
+@media (max-width: 327px){
 
-.cards{
-    display: grid;
-    grid-template-columns:  1fr 1fr 1fr;
-    grid-template-rows: 200px;
-    gap: 30px;
-}
-
-.cards .second {
-    transform: translateY(20px);
-}
-
-.cards .third{
-    transform: translatey(40px);
-}
-
-.people{
-    float: left;
-    border-radius: 50%;
-    height: 40px;
-}
-
-.star-icon{
-    float: left;
-    margin-left: 15px;
-    margin-top: 15px
-}
-
-.reviews .star , .tech .star , .report .star{
-    padding: 20px;
-    margin-left:200px;
-}
-
-.product-reviews .reviews ,  .product-reviews .report , .product-reviews .tech {
-    background-color: hsl(300, 24%, 96%);
-    margin-bottom: 20px;
-    height: 50px;
-    border-radius: 5%;
-    width: 450px; 
-}
-
-.card{
-    padding: 20px;
-}
-
-h1{
-    font-size: 5rem;
-    color: hsl(300, 43%, 22%);
-    margin-bottom: 20px;
-}
-
-h3{
-    color:hsl(0, 0%, 100%);
-    margin-bottom: 40px;
-    margin-left: 60px;
-}
-
-span{
-    color: hsl(333, 80%, 67%);
-    font-weight: 300;
-}
-
-.star{
-    color:  hsl(303, 10%, 53%);
-}
-
-.cards .star{
-    color: hsl(0, 0%, 100%);
-    line-height: 1.3rem;
-}
-
-.product-reviews .star{
-    color: hsl(300, 43%, 22%);
-    font-weight: 700;    
-}
-
-.first , .second , .third{
-    background-color: hsl(300, 43%, 22%);
-    border-radius: 5%;
-}
-
-.product-info .star{
-    font-size: 1.4rem;
-}
-
-.report{
-    transform: translateX(30px);
-}
-
-.tech{
-    transform: translateX(60px);
-}
-
-
-
-@media (min-width: 327px) and (max-width: 900px) {
-
-      body{
+    body{
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        width:100%
-      }
+        
+    }
 
-      .section{
+    .container{
+        margin-top: auto;
         display: flex;
         flex-direction: column;
+    }
+
+    .first-card{
+        position: relative;
+    }
+
+    .first-card .quote{
+        position: absolute;
+        top: 0px;
+        right: 5%;
+        height: 80px
+    }
+
+    .first-card, .second-card, .third-card, .fourth-card, .fifth-card {
+        padding: 15px;
+        font-size: 0.5rem; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+    .first-p{
+       font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 328px) and (max-width: 900px){
+    body{
+        display: flex;
         justify-content: center;
         align-items: center;
-        margin-left: 40px;
-      }
-
-      h1{
-        font-size: 2.5rem;
-        margin-left: 50px;
-        padding: 20px
-      }
-
-      .product-info .star{
-        text-align:center;
-      }
-
-      .report{
-        transform:none;
+        
     }
-    
-    .tech{
-        transform:none
-    }
-       .star-icon {
-        float: none;
-        display: inline-block;
-        margin-left: 30px;
-        margin-top: 15px;
-      }
-     
-   
-      .product-reviews .reviews, .product-reviews .report, .product-reviews .tech {
-        background-color: hsl(300, 24%, 96%);
-        height: auto;
-        border-radius: 5%;
+
+    .container{
+        display: flex;
+        flex-direction: column;
         width: 300px;
-        padding: 10px;
-        margin-bottom: 20px;
+        margin-top: 300px;
     }
 
-    .reviews .star , .report .star , .tech .star{
-        margin-left: 40px;
+    .first-card{
+        position: relative;
     }
 
-    .cards {
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        align-items: center; 
+    .first-card .quote{
+        position: absolute;
+        top: 0px;
+        right: 5%;
+        height: 80px
     }
+
+    .first-card, .second-card, .third-card, .fourth-card, .fifth-card {
+        padding: 15px;
+        font-size: 0.5rem; 
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
+    .first-p{
+       font-size: 0.7rem;
+    }
+
+    .attribution {
+        text-align: center; 
+        margin-top: 25px;
+        padding: 20px; 
     
-    .card {
-        flex-basis: 200px;
-        max-width: 55%; 
-        border-radius: 2%;
-       
     }
-     
 }
-
 
